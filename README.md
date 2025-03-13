@@ -5,19 +5,19 @@
 Clone repository 
 
 ```bash
-$ git clone https://github.com/vazperale/OnlineShop.git
+ git clone https://github.com/vazperale/OnlineShop.git
 ```
 
 install dependencies
 
 ```bash
-$ npm install
+ npm install
 ```
 
 create .env file in root path
 
 ```bash
-$ DB_HOST=
+  DB_HOST=
   DB_PORT=
   DB_USERNAME=
   DB_PASSWORD=
