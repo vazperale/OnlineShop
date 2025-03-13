@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  db:
+     image: postgres:14  # Imagen oficial de PostgreSQL
+     restart: always
+     container_name: postgres_db
+     ports:
+      - "5432:5432"  # Exponer el puerto 5432 al host local
+     environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+     volumes:
+      - db_data:/var/lib/postgresql/data
+     networks:
+      - mynetwork  # Usar la red personalizada
+
+networks:
+  mynetwork:
+    driver: bridge  # Crear una red de tipo bridge para permitir comunicación entre contenedores
+
+volumes:
+  db_data:
